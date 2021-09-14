@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Microsoft.Owin.Security.OAuth;
+
 
 namespace Ecommerce_B2C_dotnet_FrontEnd
 {
@@ -10,6 +12,8 @@ namespace Ecommerce_B2C_dotnet_FrontEnd
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            config.SuppressDefaultHostAuthentication();
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
             // Web API routes
             config.MapHttpAttributeRoutes();
