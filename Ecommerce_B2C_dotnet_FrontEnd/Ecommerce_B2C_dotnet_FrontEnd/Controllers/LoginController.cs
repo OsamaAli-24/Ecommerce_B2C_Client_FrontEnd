@@ -53,10 +53,10 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
             return loginResults; 
         }
 
-        [Route("~/api/Login/GetName1")]
-        [AllowAnonymous]
+        [Route("~/api/Login/GetUser")]
+        [Authorize]
         [HttpPost]
-        public String GetName1()
+        public String GetUser()
         {
             if (User.Identity.IsAuthenticated)
             {

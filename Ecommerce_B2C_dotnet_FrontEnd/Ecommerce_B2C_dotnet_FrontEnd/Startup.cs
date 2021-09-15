@@ -25,7 +25,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = "http://innovative-it.com", //some string, normally web url,  
                         ValidAudience = "http://innovative-it.com",
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("abcc %#@*^12345"))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("28EDC39862124CD7331ADEF9ED8E2"))
                     }
                 });
         }
