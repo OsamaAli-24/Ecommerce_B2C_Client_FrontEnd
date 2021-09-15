@@ -26,9 +26,9 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services
             permClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
             permClaims.Add(new Claim("valid", "1"));
             permClaims.Add(new Claim("userId", param.Id.ToString()));
-            permClaims.Add(new Claim("name", param.FirstName + param.LastName));
+            permClaims.Add(new Claim("name", param.FirstName));
             permClaims.Add(new Claim("Email", param.Email));
-           //permClaims.Add(new Claim("Role", param.Role));
+            permClaims.Add(new Claim("Role", param.Role));
             //Create Security Token object by giving required parameters    
             var token = new JwtSecurityToken(issuer, //Issure    
                             issuer,  //Audience    
@@ -36,7 +36,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services
                             expires: DateTime.Now.AddDays(1),
                             signingCredentials: credentials);
             var jwt_token = new JwtSecurityTokenHandler().WriteToken(token);
-            return new { data = jwt_token };
+            return jwt_token ;
         }
     }
 }
