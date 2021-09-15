@@ -7,34 +7,54 @@ using System.Web.Http;
 using System.Security.Claims;
 using Ecommerce_B2C_dotnet_FrontEnd.Dto;
 using Ecommerce_B2C_dotnet_FrontEnd.Services;
+using Microsoft.AspNetCore.Mvc;
+using Ecommerce_B2C_dotnet_FrontEnd.Services.LoginService;
+using Ecommerce_B2C_dotnet_FrontEnd.Areas.Constants;
+using Ecommerce_B2C_dotnet_FrontEnd.ServiceResults;
 
 namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
 {
+    [Route("api/[controller]")]
     public class LoginController : ApiController
     {
-        
-        /*private  ITokenService _userService;
-        public LoginController(ITokenService userService)
+        UserTokenService _userTokenService = new UserTokenService();
+        LoginService _loginService = new LoginService();
+        //private ITokenService _UserTokenService;
+        public LoginController()
         {
-            _userService = userService;
+            
         }
 
+
+        [Route("~/api/Login/LoginUser")]
+        [AllowAnonymous]
         [HttpGet]
-        public Object GetName1(LoginDto param)
+        public LoginResults LoginUser(LoginDto param)
         {
-            if (param != null)
+            LoginResults loginResults = new LoginResults();
+            try
             {
-                
-                return "Invalid";
+                if (param != null)
+                {
+                    var data = _loginService.ValidateLoginCredentials(param);
+                    var result = _userTokenService.GetToken(data);
+                    data.Token = result.ToString();
+                    data.IsError = false;
+                    data.Message = Message.Success;
+                    loginResults = data;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                object result = _userService.UserTokenService.GetToken();
-                return new { data = _userService.UserTokenService.GetToken()};
+                loginResults.Message = ex.Message;
+                loginResults.IsError = true;
             }
-        }*/
+           
+            return loginResults; 
+        }
 
-
+        [Route("~/api/Login/GetName1")]
+        [AllowAnonymous]
         [HttpPost]
         public String GetName1()
         {
@@ -52,16 +72,6 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
                 return "Invalid";
             }
         }
-
-
-        [HttpGet]
-        public String GetName2()
-        {
-
-            return "Hello";
-        }
-
-
 
     }
 
