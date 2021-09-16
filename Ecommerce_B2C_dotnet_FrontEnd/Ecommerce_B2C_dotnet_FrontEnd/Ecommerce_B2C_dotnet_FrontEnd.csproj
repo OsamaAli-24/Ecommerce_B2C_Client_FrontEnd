@@ -251,10 +251,15 @@
     <Compile Include="Migrations\202109161223553_addProductsTable.designer.cs">
       <DependentUpon>202109161223553_addProductsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109161242052_addRolesTable.cs" />
+    <Compile Include="Migrations\202109161242052_addRolesTable.designer.cs">
+      <DependentUpon>202109161242052_addRolesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\EcommerceContext.cs" />
     <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\Roles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceResults\BaseResult.cs" />
     <Compile Include="ServiceResults\LoginResults.cs" />
@@ -356,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109161223553_addProductsTable.resx">
       <DependentUpon>202109161223553_addProductsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109161242052_addRolesTable.resx">
+      <DependentUpon>202109161242052_addRolesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

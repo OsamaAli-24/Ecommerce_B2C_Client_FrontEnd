@@ -13,5 +13,6 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Models
         }
         public DbSet<Accounts> Accounts { get; set; }
         public DbSet<Products> Products { get; set; }
+        public DbSet<Roles> Roles { get; set; }
     }
 }
