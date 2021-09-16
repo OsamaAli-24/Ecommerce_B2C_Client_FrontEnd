@@ -1,5 +1,6 @@
 ﻿using Ecommerce_B2C_dotnet_FrontEnd.Areas.Constants;
 using Ecommerce_B2C_dotnet_FrontEnd.Dto;
+using Ecommerce_B2C_dotnet_FrontEnd.Models;
 using Ecommerce_B2C_dotnet_FrontEnd.ServiceResults;
 using Ecommerce_B2C_dotnet_FrontEnd.Services.ProductService;
 using System;
@@ -56,6 +57,37 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
                     if(result == true) { 
                     editProductResults.IsError = false;
                     editProductResults.Message = Message.Success;
+                    }
+                    else
+                    {
+                        editProductResults.IsError = true;
+                        editProductResults.Message = Message.Error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                editProductResults.Message = ex.Message;
+                editProductResults.IsError = true;
+            }
+
+            return editProductResults;
+        }
+        [Route("~/api/Product/AddProduct")]
+        [Authorize]
+        [HttpPost]
+        public EditProductResults AddProduct(Products param)
+        {
+            var editProductResults = new EditProductResults();
+            try
+            {
+                if (param != null)
+                {
+                    var result = _productService.AddProduct(param);
+                    if (result == true)
+                    {
+                        editProductResults.IsError = false;
+                        editProductResults.Message = Message.Success;
                     }
                     else
                     {

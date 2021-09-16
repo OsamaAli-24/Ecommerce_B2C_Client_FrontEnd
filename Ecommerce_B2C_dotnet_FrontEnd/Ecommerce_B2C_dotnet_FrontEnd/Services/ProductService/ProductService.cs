@@ -43,7 +43,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.ProductService
             {
                 product.IsDelete = param.IsDelete;
             }
-            if (product.IsDelete != null)
+            if (product.UserId == 1)
             {
                 product.UserId = param.UserId;
             }
@@ -61,5 +61,44 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.ProductService
             
         }
 
+        public bool AddProduct(Products param)
+        {
+            //if (param.ProductName == null)
+            //{
+            //    param.ProductName = "";
+            //}
+            //if (param.ProductDetail == null)
+            //{
+            //    param.ProductDetail = "";
+            //}
+            //if (param.ProductImage == null)
+            //{
+            //    param.ProductImage = "";
+            //}
+            //if (param.ProductPrice == 0)
+            //{
+            //     param.ProductPrice = 0;
+            //}
+            //if (param.ProductType == null)
+            //{
+            //    param.ProductType = "";
+            //}
+            //if (param.IsActive == null)
+            //{
+            //    param.IsActive = true;
+            //}
+            //if (param.IsDelete == null)
+            //{
+            //    param.IsDelete = false;
+            //}
+            //if (param.UserId == 0)
+            //{
+            //    param.UserId = 1;
+            //}
+            _EcommerceContext.Products.Add(param);
+            _EcommerceContext.SaveChanges();
+            return true;
+
+        }
     }
 }
