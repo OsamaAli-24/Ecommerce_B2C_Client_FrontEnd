@@ -42,5 +42,36 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
             return productResults;
         }
 
+        [Route("~/api/Product/UpdateProducts")]
+        [Authorize]
+        [HttpPost]
+        public EditProductResults UpdateProducts(ProductDto param)
+        {
+            var editProductResults = new EditProductResults();
+            try
+            {
+                if (param != null)
+                {
+                    var result = _productService.UpdateProduct(param);
+                    if(result == true) { 
+                    editProductResults.IsError = false;
+                    editProductResults.Message = Message.Success;
+                    }
+                    else
+                    {
+                        editProductResults.IsError = true;
+                        editProductResults.Message = Message.Error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                editProductResults.Message = ex.Message;
+                editProductResults.IsError = true;
+            }
+
+            return editProductResults;
+        }
+
     }
 }
