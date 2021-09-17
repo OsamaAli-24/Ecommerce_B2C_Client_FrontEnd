@@ -298,6 +298,11 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\1046eff7-fb5f-44b7-89b6-a501a3bcab78.jpeg" />
+    <Content Include="Images\406893ca-d230-422e-8c61-99a3c95e8012.jpeg" />
+    <Content Include="Images\c1d63a07-dcf0-47b6-a2a3-cd69727dc9ab.jpeg" />
+    <Content Include="Images\d0da7834-4665-4df3-8187-8b288dccdbb4.jpeg" />
+    <Content Include="Images\ec4c22c4-7adc-4299-afe4-2538f0aac04a.jpeg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -342,7 +347,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

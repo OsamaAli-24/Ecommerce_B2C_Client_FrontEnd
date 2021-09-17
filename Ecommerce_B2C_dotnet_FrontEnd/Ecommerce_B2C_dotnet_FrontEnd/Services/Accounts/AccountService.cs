@@ -64,12 +64,8 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
         public bool UpdateUser(AccountDto param)
         {
             var account = _EcommerceContext.Accounts.FirstOrDefault(x => x.Id == param.Id);
-            
-            if (param.RegistrationDate == null)
-            {
-                account.RegistrationDate = System.DateTime.Now;
-            }
-            /*if (param.Email != null)
+
+            if (param.Email != null)
             {
                 account.Email = param.Email;
             }
@@ -96,7 +92,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
             if (account.Id == 1)
             {
                 account.Id = param.Id;
-            }*/
+            }
 
             _EcommerceContext.SaveChanges();
 
