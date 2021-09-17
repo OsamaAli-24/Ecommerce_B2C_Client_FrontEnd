@@ -13,7 +13,7 @@ using System.Web.Http;
 namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
 {
     [Route("api/[controller]")]
-    public class userController : ApiController
+    public class UserController : ApiController
     {
         AccountService _accountService = new AccountService();
 
