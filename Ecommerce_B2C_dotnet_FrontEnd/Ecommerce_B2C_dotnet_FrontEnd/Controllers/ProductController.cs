@@ -105,5 +105,36 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
             return editProductResults;
         }
 
+        [Route("~/api/Product/DeleteProduct")]
+        [Authorize]
+        [HttpPost]
+        public DeleletProductResult DeleteProduct(DeleleteProductDto param)
+        {
+            var deleletProductResult = new DeleletProductResult();
+            try
+            {
+                if (param != null)
+                {
+                    var result = _productService.DeleteProduct(param);
+                    if (result == true)
+                    {
+                        deleletProductResult.IsError = false;
+                        deleletProductResult.Message = Message.Success;
+                    }
+                    else
+                    {
+                        deleletProductResult.IsError = true;
+                        deleletProductResult.Message = Message.Error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                deleletProductResult.Message = ex.Message;
+                deleletProductResult.IsError = true;
+            }
+
+            return deleletProductResult;
+        }
     }
 }

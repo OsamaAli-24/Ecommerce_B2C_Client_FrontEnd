@@ -14,5 +14,6 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.ProductService
         IList<Products> GetProduct(Int64 Id);
         bool UpdateProduct(ProductDto param);
         bool AddProduct(Products param);
+        bool DeleteProduct(DeleleteProductDto param);
     }
 }

@@ -100,5 +100,13 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.ProductService
             return true;
 
         }
+
+        public bool DeleteProduct(DeleleteProductDto param)
+        {
+            var product = _EcommerceContext.Products.FirstOrDefault(x => x.Id == param.Id);
+            _EcommerceContext.Products.Remove(product);
+            _EcommerceContext.SaveChanges();
+            return true;
+        }
     }
 }
