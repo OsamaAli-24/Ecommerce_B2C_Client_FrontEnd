@@ -16,7 +16,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
 
         public bool AddUser(Accounts param)
         {
-            if (param.FirstName == null)
+            /*if (param.FirstName == null)
             {
                 param.FirstName = "";
             }
@@ -47,7 +47,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
             if (param.City == null)
             {
                 param.City = null;
-            }
+            }*/
             _EcommerceContext.Accounts.Add(param);
             _EcommerceContext.SaveChanges();
             return true;
@@ -61,14 +61,11 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
             return true;
         }
 
-        public bool EditUser(AccountDto param)
+        public bool UpdateUser(AccountDto param)
         {
             var account = _EcommerceContext.Accounts.FirstOrDefault(x => x.Id == param.Id);
-            if (param.FirstName != null)
-            {
-                account.FirstName = param.FirstName;
-            }
-            if (param.Email != null)
+            account.RegistrationDate = System.DateTime.Now;
+            /*if (param.Email != null)
             {
                 account.Email = param.Email;
             }
@@ -95,7 +92,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
             if (account.Id == 1)
             {
                 account.Id = param.Id;
-            }
+            }*/
 
             _EcommerceContext.SaveChanges();
 

@@ -50,17 +50,17 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
         }
 
 
-        [Route("~/api/User/EditUser")]
+        [Route("~/api/User/UpdateUser")]
         [Authorize]
         [HttpPost]
-        public EditAccountResults EditUser(AccountDto param)
+        public EditAccountResults UpdateUser(AccountDto param)
         {
             var editAccountResults = new EditAccountResults();
             try
             {
                 if (param != null)
                 {
-                    var result = _accountService.EditUser(param);
+                    var result = _accountService.UpdateUser(param);
                     if (result == true)
                     {
                         editAccountResults.IsError = false;
