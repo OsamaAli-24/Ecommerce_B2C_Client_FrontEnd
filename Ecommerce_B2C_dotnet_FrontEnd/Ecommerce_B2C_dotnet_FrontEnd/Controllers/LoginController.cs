@@ -19,12 +19,6 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
     {
         UserTokenService _userTokenService = new UserTokenService();
         LoginService _loginService = new LoginService();
-        //private ITokenService _UserTokenService;
-        public LoginController()
-        {
-            
-        }
-
 
         [Route("~/api/Login/LoginUser")]
         [AllowAnonymous]

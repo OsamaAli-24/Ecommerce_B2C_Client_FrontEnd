@@ -233,10 +233,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\userController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Dto\AccountDto.cs" />
     <Compile Include="Dto\LoginDto.cs" />
+    <Compile Include="Dto\ProductDto.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -257,21 +256,25 @@
     <Compile Include="Migrations\202109161242052_addRolesTable.designer.cs">
       <DependentUpon>202109161242052_addRolesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109161706400_addForeignkeyInProducts.cs" />
+    <Compile Include="Migrations\202109161706400_addForeignkeyInProducts.designer.cs">
+      <DependentUpon>202109161706400_addForeignkeyInProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\EcommerceContext.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceResults\AccountResults.cs" />
     <Compile Include="ServiceResults\BaseResult.cs" />
-    <Compile Include="ServiceResults\EditAccountResults.cs" />
+    <Compile Include="ServiceResults\EditProductResults.cs" />
     <Compile Include="ServiceResults\LoginResults.cs" />
-    <Compile Include="Services\Accounts\AccountService.cs" />
-    <Compile Include="Services\Accounts\IAccountService.cs" />
+    <Compile Include="ServiceResults\ProductResults.cs" />
     <Compile Include="Services\ITokenService.cs" />
     <Compile Include="Services\LoginService\ILoginService.cs" />
     <Compile Include="Services\LoginService\LoginService.cs" />
+    <Compile Include="Services\ProductService\IProductService.cs" />
+    <Compile Include="Services\ProductService\ProductService.cs" />
     <Compile Include="Services\UserTokenService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -370,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109161242052_addRolesTable.resx">
       <DependentUpon>202109161242052_addRolesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109161706400_addForeignkeyInProducts.resx">
+      <DependentUpon>202109161706400_addForeignkeyInProducts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

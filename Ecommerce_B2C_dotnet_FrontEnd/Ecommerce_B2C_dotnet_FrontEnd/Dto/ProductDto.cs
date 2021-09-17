@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace Ecommerce_B2C_dotnet_FrontEnd.Models
+namespace Ecommerce_B2C_dotnet_FrontEnd.Dto
 {
-    public class Products
+    public class ProductDto
     {
-        [Key]
         public Int64 Id { get; set; }
-        [ForeignKey("Accounts")]
         public Int64 UserId { get; set; }
-        public virtual Accounts Accounts { get; set; }
         public string ProductName { get; set; }
         public string ProductDetail { get; set; }
         public string ProductType { get; set; }
