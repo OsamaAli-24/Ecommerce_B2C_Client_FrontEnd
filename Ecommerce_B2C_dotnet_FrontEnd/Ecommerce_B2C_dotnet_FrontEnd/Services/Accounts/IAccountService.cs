@@ -15,6 +15,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
         bool EditUser(AccountDto param);
         bool AddUser(Accounts param);
         bool DeleteUser(Int64 Id);
+        string ImgInBase64(string base64img);
 
     }
 }

@@ -4,6 +4,7 @@ using Ecommerce_B2C_dotnet_FrontEnd.ServiceResults;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -106,6 +107,40 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
             return _EcommerceContext.Accounts.Where(x=>x.Id !=id).ToList();
         }
 
-        
+        public string ImgInBase64(string base64img)
+        {
+            string path = HttpContext.Current.Server.MapPath("~/Images/");
+           // string path = Path.Combine(_webHostEnviroment.WebRootPath, "Images");
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            //string test = base64img.base64Img.GetBase64Data();
+            var bytes = Convert.FromBase64String(base64img.GetBase64Data());
+            string FileName = Guid.NewGuid().ToString() + "." + base64img.GetExtension();
+            string file = Path.Combine(path, FileName);
+            int maxContentSize = 1024 * 1024 * 1;
+            IList<string> allowedExtension = new List<string> { "jpg", "jpeg", "png", "gif" };
+            if (!allowedExtension.Contains(base64img.GetExtension()))
+            {
+                return "File formate is not supported";
+            }
+            if (base64img.Length > maxContentSize)
+            {
+                return "file size is greater then 1MB";
+            }
+            if (bytes.Length > 0)
+            {
+                using (var stream = new FileStream(file, FileMode.Create))
+                {
+                    stream.Write(bytes, 0, bytes.Length);
+                    stream.Flush();
+                    return FileName;
+                    //return "Image is uploaded successfully";
+                }
+            }
+            return "operation is successfull";
+        }
+
     }
 }
