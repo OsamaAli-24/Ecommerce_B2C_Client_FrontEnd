@@ -64,7 +64,11 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
         public bool UpdateUser(AccountDto param)
         {
             var account = _EcommerceContext.Accounts.FirstOrDefault(x => x.Id == param.Id);
-            account.RegistrationDate = System.DateTime.Now;
+            
+            if (param.RegistrationDate == null)
+            {
+                account.RegistrationDate = System.DateTime.Now;
+            }
             /*if (param.Email != null)
             {
                 account.Email = param.Email;
@@ -106,7 +110,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
 
         public string ImgInBase64(string base64img)
         {
-            string path = HttpContext.Current.Server.MapPath("~/Images/");
+            string path = HttpContext.Current.Server.MapPath("~/Images");
            // string path = Path.Combine(_webHostEnviroment.WebRootPath, "Images");
             if (!Directory.Exists(path))
             {
