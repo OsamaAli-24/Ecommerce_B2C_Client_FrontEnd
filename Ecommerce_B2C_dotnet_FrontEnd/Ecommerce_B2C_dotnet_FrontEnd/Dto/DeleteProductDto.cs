@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Ecommerce_B2C_dotnet_FrontEnd.Dto
 {
-    public class DeleleteProductDto
+    public class DeleteProductDto
     {
         public Int64 Id { get; set; }
         //public string ProductName { get; set; }

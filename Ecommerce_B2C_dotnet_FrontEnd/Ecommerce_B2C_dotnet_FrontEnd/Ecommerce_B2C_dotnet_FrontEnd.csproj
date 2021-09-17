@@ -236,7 +236,7 @@
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Dto\AccountDto.cs" />
-    <Compile Include="Dto\DeleleteProductDto.cs" />
+    <Compile Include="Dto\DeleteProductDto.cs" />
     <Compile Include="Dto\LoginDto.cs" />
     <Compile Include="Dto\ProductDto.cs" />
     <Compile Include="Enums\Enums.cs" />
@@ -271,7 +271,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceResults\AccountResults.cs" />
     <Compile Include="ServiceResults\BaseResult.cs" />
-    <Compile Include="ServiceResults\DeleletProductResult.cs" />
+    <Compile Include="ServiceResults\DeleteProductResult.cs" />
+    <Compile Include="ServiceResults\DeleteUserResults.cs" />
     <Compile Include="ServiceResults\EditAccountResults.cs" />
     <Compile Include="ServiceResults\EditProductResults.cs" />
     <Compile Include="ServiceResults\LoginResults.cs" />

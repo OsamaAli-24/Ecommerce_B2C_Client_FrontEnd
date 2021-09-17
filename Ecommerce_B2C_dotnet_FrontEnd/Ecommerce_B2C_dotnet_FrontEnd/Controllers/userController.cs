@@ -81,6 +81,38 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
 
             return editAccountResults;
         }
+
+        [Route("~/api/User/DeleteUser")]
+        [Authorize]
+        [HttpPost]
+        public DeleteUserResults DeleteUser(Int64 Id)
+        {
+            var deleteUserResults = new DeleteUserResults();
+            try
+            {
+                if (Id != 0)
+                {
+                    var result = _accountService.DeleteUser(Id);
+                    if (result == true)
+                    {
+                        deleteUserResults.IsError = false;
+                        deleteUserResults.Message = Message.Success;
+                    }
+                    else
+                    {
+                        deleteUserResults.IsError = true;
+                        deleteUserResults.Message = Message.Error;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                deleteUserResults.Message = ex.Message;
+                deleteUserResults.IsError = true;
+            }
+
+            return deleteUserResults;
+        }
     }
 
 }

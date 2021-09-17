@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Ecommerce_B2C_dotnet_FrontEnd.ServiceResults
 {
-    public class DeleletProductResult:BaseResult
+    public class DeleteUserResults : BaseResult
     {
     }
 }

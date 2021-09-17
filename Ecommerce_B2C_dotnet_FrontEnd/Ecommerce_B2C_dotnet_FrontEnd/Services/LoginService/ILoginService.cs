@@ -11,5 +11,8 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.LoginService
     public interface ILoginService
     {
         LoginResults ValidateLoginCredentials(LoginDto param);
+
+
+
     }
 }

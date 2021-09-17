@@ -52,6 +52,14 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
             return true;
         }
 
+        public bool DeleteUser(long Id)
+        {
+            var account = _EcommerceContext.Accounts.FirstOrDefault(x => x.Id == Id);
+            _EcommerceContext.Accounts.Remove(account);
+            _EcommerceContext.SaveChanges();
+            return true;
+        }
+
         public bool EditUser(AccountDto param)
         {
             var account = _EcommerceContext.Accounts.FirstOrDefault(x => x.Id == param.Id);

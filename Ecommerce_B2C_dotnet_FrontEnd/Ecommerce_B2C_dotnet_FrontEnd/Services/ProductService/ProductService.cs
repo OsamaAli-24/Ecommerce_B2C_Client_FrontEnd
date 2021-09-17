@@ -101,7 +101,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.ProductService
 
         }
 
-        public bool DeleteProduct(DeleleteProductDto param)
+        public bool DeleteProduct(DeleteProductDto param)
         {
             var product = _EcommerceContext.Products.FirstOrDefault(x => x.Id == param.Id);
             _EcommerceContext.Products.Remove(product);

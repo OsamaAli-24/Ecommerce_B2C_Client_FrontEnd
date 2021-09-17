@@ -108,9 +108,9 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
         [Route("~/api/Product/DeleteProduct")]
         [Authorize]
         [HttpPost]
-        public DeleletProductResult DeleteProduct(DeleleteProductDto param)
+        public DeleteProductResult DeleteProduct(DeleteProductDto param)
         {
-            var deleletProductResult = new DeleletProductResult();
+            var deleletProductResult = new DeleteProductResult();
             try
             {
                 if (param != null)
