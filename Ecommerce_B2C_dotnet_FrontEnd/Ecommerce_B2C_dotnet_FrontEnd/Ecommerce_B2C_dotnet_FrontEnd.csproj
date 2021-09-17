@@ -277,6 +277,7 @@
     <Compile Include="ServiceResults\EditProductResults.cs" />
     <Compile Include="ServiceResults\LoginResults.cs" />
     <Compile Include="ServiceResults\ProductResults.cs" />
+    <Compile Include="ServiceResults\UserResults.cs" />
     <Compile Include="Services\Accounts\AccountService.cs" />
     <Compile Include="Services\Accounts\IAccountService.cs" />
     <Compile Include="Services\ITokenService.cs" />

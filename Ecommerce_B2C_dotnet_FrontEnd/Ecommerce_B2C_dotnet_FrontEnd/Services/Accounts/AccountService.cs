@@ -100,5 +100,12 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Services.AccountService
 
             return true;
         }
+
+        public IList<Accounts> GetUser(long id)
+        {
+            return _EcommerceContext.Accounts.Where(x=>x.Id !=id).ToList();
+        }
+
+        
     }
 }

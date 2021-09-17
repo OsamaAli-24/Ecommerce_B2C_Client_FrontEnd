@@ -113,6 +113,33 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
 
             return deleteUserResults;
         }
+
+        [Route("~/api/User/GetUsers")]
+        [Authorize]
+        [HttpGet]
+        public UserResults GetUsers(Int64 id)
+        {
+            var accountResults = new UserResults();
+            try
+            {
+                if (id != 0)
+                {
+                    //var data = _productService.GetProduct(id);
+                    accountResults.accountsdata = _accountService.GetUser(id);
+                    accountResults.IsError = false;
+                    accountResults.Message = Message.Success;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                accountResults.Message = ex.Message;
+                accountResults.IsError = true;
+            }
+
+            return accountResults;
+        }
+
     }
 
 }
