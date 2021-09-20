@@ -16,6 +16,7 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
     public class ProductController : ApiController
     {
         ProductService _productService = new ProductService();
+        AccountService _accountService = new AccountService();
 
         [Route("~/api/Product/GetProducts")]
         [Authorize]
@@ -53,6 +54,11 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
             {
                 if (param != null)
                 {
+                    if (param.ProductImage != null)
+                    {
+                        var image = _accountService.ImgInBase64(param.ProductImage);
+                        param.ProductImage = image;
+                    }
                     var result = _productService.UpdateProduct(param);
                     if(result == true) { 
                     editProductResults.IsError = false;
@@ -83,6 +89,11 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
             {
                 if (param != null)
                 {
+                    if (param.ProductImage != null)
+                    {
+                        var image = _accountService.ImgInBase64(param.ProductImage);
+                        param.ProductImage = image;
+                    }
                     var result = _productService.AddProduct(param);
                     if (result == true)
                     {

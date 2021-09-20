@@ -27,8 +27,10 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
             {
                 if (param != null)
                 {
-                    var image = _accountService.ImgInBase64(param.ImageName);
-                    param.ImageName = image;
+                    if(param.ImageName != null) { 
+                        var image = _accountService.ImgInBase64(param.ImageName);
+                        param.ImageName = image;
+                    }
                     var result = _accountService.AddUser(param);
                     if (result == true)
                     {
@@ -62,8 +64,11 @@ namespace Ecommerce_B2C_dotnet_FrontEnd.Controllers
             {
                 if (param != null)
                 {
-                    var image = _accountService.ImgInBase64(param.ImageName);
-                    param.ImageName = image;
+                    if (param.ImageName != null)
+                    {
+                        var image = _accountService.ImgInBase64(param.ImageName);
+                        param.ImageName = image;
+                    }
                     var result = _accountService.UpdateUser(param);
                     if (result == true)
                     {
