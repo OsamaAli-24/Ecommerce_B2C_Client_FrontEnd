@@ -310,6 +310,8 @@
     <Content Include="ClientApp\karma.conf.js" />
     <Content Include="ClientApp\src\app\app.component.css" />
     <Content Include="ClientApp\src\app\app.component.html" />
+    <Content Include="ClientApp\src\app\login\login.component.css" />
+    <Content Include="ClientApp\src\app\login\login.component.html" />
     <Content Include="ClientApp\src\favicon.ico" />
     <Content Include="ClientApp\src\index.html" />
     <Content Include="ClientApp\src\styles.css" />
@@ -385,6 +387,10 @@
     <Content Include="Scripts\ClientApp\favicon.ico" />
     <Content Include="Scripts\ClientApp\index.html" />
     <Content Include="Scripts\ClientApp\main.565fdbc780ff1b0fcaff.js" />
+    <Content Include="Scripts\ClientApp\main.6521e416805c493cc190.js" />
+    <Content Include="Scripts\ClientApp\main.afd201bd54b1368dd476.js" />
+    <Content Include="Scripts\ClientApp\main.d86c85a3ee31e475430e.js" />
+    <Content Include="Scripts\ClientApp\main.da494eb4f8cdd1209f0c.js" />
     <Content Include="Scripts\ClientApp\polyfills.ddf0501009b6c3edb8c3.js" />
     <Content Include="Scripts\ClientApp\runtime.a60e917449a7de47caed.js" />
     <Content Include="Scripts\ClientApp\styles.31d6cfe0d16ae931b73c.css" />
@@ -1184,7 +1190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ClientApp\src\app\login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1237,6 +1242,10 @@
     <TypeScriptCompile Include="ClientApp\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\app.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\app.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Services\login.service.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\Services\login.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="ClientApp\src\environments\environment.ts" />
     <TypeScriptCompile Include="ClientApp\src\main.ts" />
