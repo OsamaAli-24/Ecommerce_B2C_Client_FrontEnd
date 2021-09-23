@@ -122,11 +122,17 @@
     <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Http.Owin, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.7\lib\net45\System.Web.Http.Owin.dll</HintPath>
     </Reference>
@@ -302,6 +308,10 @@
     <Content Include="ClientApp\dist\out-tsc\app\app.module.js" />
     <Content Include="ClientApp\dist\out-tsc\app\login\login.component.js" />
     <Content Include="ClientApp\dist\out-tsc\app\login\login.component.spec.js" />
+    <Content Include="ClientApp\dist\out-tsc\app\Services\login.service.js" />
+    <Content Include="ClientApp\dist\out-tsc\app\Services\login.service.spec.js" />
+    <Content Include="ClientApp\dist\out-tsc\app\_models\LoginParams.js" />
+    <Content Include="ClientApp\dist\out-tsc\app\_models\ResultsParams.js" />
     <Content Include="ClientApp\dist\out-tsc\environments\environment.js" />
     <Content Include="ClientApp\dist\out-tsc\environments\environment.prod.js" />
     <Content Include="ClientApp\dist\out-tsc\main.js" />
@@ -386,11 +396,8 @@
     <Content Include="Scripts\ClientApp\3rdpartylicenses.txt" />
     <Content Include="Scripts\ClientApp\favicon.ico" />
     <Content Include="Scripts\ClientApp\index.html" />
-    <Content Include="Scripts\ClientApp\main.565fdbc780ff1b0fcaff.js" />
-    <Content Include="Scripts\ClientApp\main.6521e416805c493cc190.js" />
-    <Content Include="Scripts\ClientApp\main.afd201bd54b1368dd476.js" />
-    <Content Include="Scripts\ClientApp\main.d86c85a3ee31e475430e.js" />
-    <Content Include="Scripts\ClientApp\main.da494eb4f8cdd1209f0c.js" />
+    <Content Include="Scripts\ClientApp\main.8442f97476a609b9ca1f.js" />
+    <Content Include="Scripts\ClientApp\main.d9d0191c271ee65a994b.js" />
     <Content Include="Scripts\ClientApp\polyfills.ddf0501009b6c3edb8c3.js" />
     <Content Include="Scripts\ClientApp\runtime.a60e917449a7de47caed.js" />
     <Content Include="Scripts\ClientApp\styles.31d6cfe0d16ae931b73c.css" />
@@ -419,6 +426,11 @@
     <Content Include="ClientApp\dist\out-tsc\main.js.map" />
     <Content Include="ClientApp\dist\out-tsc\polyfills.js.map" />
     <Content Include="ClientApp\dist\out-tsc\test.js.map" />
+    <Content Include="ClientApp\dist\out-tsc\app\Services\login.service.js.map" />
+    <Content Include="ClientApp\dist\out-tsc\app\Services\login.service.spec.js.map" />
+    <Content Include="ClientApp\dist\out-tsc\app\_models\LoginParams.js.map" />
+    <Content Include="ClientApp\dist\out-tsc\app\_models\ResultsParams.js.map" />
+    <Content Include="ClientApp\proxy.conf.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1246,10 +1258,14 @@
     <TypeScriptCompile Include="ClientApp\src\app\login\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Services\login.service.spec.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\Services\login.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\_models\LoginParams.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\_models\ResultsParams.ts" />
     <TypeScriptCompile Include="ClientApp\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="ClientApp\src\environments\environment.ts" />
+    <TypeScriptCompile Include="ClientApp\src\Login.ts" />
     <TypeScriptCompile Include="ClientApp\src\main.ts" />
     <TypeScriptCompile Include="ClientApp\src\polyfills.ts" />
+    <TypeScriptCompile Include="ClientApp\src\ResultsParams.ts" />
     <TypeScriptCompile Include="ClientApp\src\test.ts" />
   </ItemGroup>
   <ItemGroup>
