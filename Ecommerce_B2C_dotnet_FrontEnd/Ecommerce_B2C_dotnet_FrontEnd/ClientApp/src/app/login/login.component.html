@@ -1,15 +1,22 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label>
-      Email:
-      <input type="text" formControlName="Email" />
-    </label>
+<div class="Bg">
+  <div class="center">
+    <h1>Login</h1>
+    <form method="post" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="txt_field">
+        <input type="text" required>
+        <span></span>
+        <label>Email</label>
+       </div>
+      <div class="txt_field">
+       <input type="password" required>
+       <span></span>
+       <label>Password</label>
+      </div>
+      <div class="pass"> Password Bhool Gy Na?</div>
+      <input type="submit" value="Login">
+      <div class="Msg">
+      <p>Lets Enjoys!</p>
+     </div>
+    </form>
   </div>
-  <div>
-    <label>
-      Password:
-      <input type="text" formControlName="Password" />
-    </label>
-  </div>
-  <button type="submit" [disabled]="!loginForm.valid">Submit</button>
-</form>
+ </div>
